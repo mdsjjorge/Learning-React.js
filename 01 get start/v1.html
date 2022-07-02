@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- some links to the CDN [Content Delivery Network] of React [React and React DOM];
+    think of this link as being a way to quickly add 
+    the react library to your page in the browser -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <title>React ⚛️</title>
+  </head>
+  <body>
+      <div id="root"></div>
+      <!-- Em vez de usar: <h1>Getting started!</h1>, com React fica assim: -->
+      <script type="text/javascript">
+          ReactDOM.render(
+              React.createElement("h1", null, "Getting Started!"),
+            //   null porque não se quer passar propriedade para esse elemento
+              document.getElementById("root")
+          );
+      </script>
+  </body>
+</html>

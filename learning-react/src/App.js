@@ -1,36 +1,17 @@
-// import logo from './logo.svg';
 import './App.css';
+import {useState} from "react";
 
-// =========== destructuring =============
-    // const [a,b,c] = [
-    //   "tokio",
-    //   "Fortal",
-    //   "Stm"
-    // ];
-    // console.log(b);
-// =======================================
-
-function App({Library}) {
+function App() {
+  const [emotion, setEmotion] = useState("happy");
+  // emotion é nossa State variável
+  // setEmotion é a função que usaremos para atualizar o State
   return (
     <div className='App'>
-      <h1>Hello world! with {Library}</h1>
+      <h1>Current emotion is {emotion}</h1>
+      <button onClick={() => {setEmotion("Sad")}}>Sad</button>
+      <button onClick={() => {setEmotion("Excited")}}>Excited</button>
+      <button onClick={() => {setEmotion("happy")}}>back</button>
     </div>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
   );
 }
 

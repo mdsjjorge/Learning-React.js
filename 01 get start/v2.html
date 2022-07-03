@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <title>v2 React ⚛️</title>
+  </head>
+  <body>
+      <div id="root"></div>
+
+      <script type="text/javascript">
+        // usando uma variável para armazenar o elemento criado
+        let heading = React.createElement(
+            "h1", 
+            null, 
+            "Getting Started!"
+        );
+        ReactDOM.render(
+            heading,
+            document.getElementById("root")
+        );
+      </script>
+
+<!-- ========================================
+criando uma lista
+======================================== -->
+
+        <!-- <script type="text/javascript">
+            let ul = React.createElement(
+                "ul",
+                {style:{color: "red"}},
+                React.createElement(
+                    "li",
+                    null,
+                    "monday"
+                    ),
+                React.createElement(
+                    "li",
+                    null,
+                    "tuesday"
+                    )
+            );
+            ReactDOM.render(
+                ul,
+                document.getElementById('root')
+            )
+        </script> -->
+
+  </body>
+</html>

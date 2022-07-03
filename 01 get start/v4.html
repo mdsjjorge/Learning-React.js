@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>v4 React ⚛️</title>
+  </head>
+  <body>
+      <div id="root"></div>
+      
+      <script type="text/babel">
+// ========================================
+// array via props  ---  <li>
+// add imagens
+// ======================================== 
+
+        function Header(props) {
+            return (
+              <header>
+                <h1> {props.name}'s kitchen </h1>
+              </header>
+            )
+        }
+        function Main(props) {
+            return (
+              <section>
+                <img
+                    height={200}
+                    src="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                    alt="restaurant"
+                />
+                <ul>
+                    {props.dishes.map((dish) => (
+                        <li key={dish.id}> {dish.title} </li>
+                    ))}
+                </ul>
+              </section>
+            );
+        }
+        const dishes = [
+            "black bean soup",
+            "macaroni and cheese",
+            "salmon and potatoes"
+        ];
+        const dishObjects = dishes.map((dish,i) => ({
+            id: i,
+            title: dish
+        })
+        );
+        function App() {
+            return (
+              <div>
+                <Header name="Jorge" />
+                <Main dishes={dishObjects} />
+              </div>
+            )
+        }
+        ReactDOM.render(
+            <App/>,
+            document.getElementById("root") 
+        )
+
+      </script>
+  </body>
+</html>

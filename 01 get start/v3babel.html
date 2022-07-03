@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>v3 React ⚛️</title>
+  </head>
+  <body>
+      <div id="root"></div>
+      
+      <script type="text/babel">
+
+        // ReactDOM.render(
+        //   <ul>
+        //     <li>🤖</li>
+        //     <li>🤠</li>
+        //     <li>🌝</li>
+        //   </ul>,
+        //   document.getElementById("root")
+        // );
+
+// ========================================
+// usando variáveis
+// ======================================== 
+
+        // let robot = "🤖";
+        // let cowboy = "🤠";
+        // let moon = "🌝";
+        // let name = "React";
+        // ReactDOM.render(
+        //     <ul>
+        //     <li>{robot}</li>
+        //     <li>{cowboy}</li>
+        //     <li>{moon}</li>
+        //     <li>{name.toUpperCase()}</li>
+        //     <li>{name.length}</li>
+        //     </ul>,
+        //     document.getElementById("root")
+        // );
+
+// ========================================
+// criando componentes
+// criar como função e iniciar com letra maiuscula 
+// ======================================== 
+
+          // function Header() {
+          //   return (
+          //     <header>
+          //       <h1> Eve's kitchen </h1>
+          //     </header>
+          //   )
+          // }
+          // function Main() {
+          //   return (
+          //     <section>
+          //       <p> We serve the most delicius food around </p>
+          //     </section>
+          //   )
+          // }
+          // function App() {
+          //   return (
+          //     <div>
+          //       <Header/>
+          //       <Main/>
+          //     </div>
+          //   )
+          // }
+          // ReactDOM.render(
+          //   // para mostrar individualmente:
+          //     // <Header/>,
+          //     // <Main/>, 
+          //   // para mostrar ambos:
+          //     // <div>
+          //     //   <Header/>
+          //     //   <Main/>
+          //     // </div>,
+          //   // outra opção, usando a função App:
+          //     <App/>,
+          //     document.getElementById("root") 
+          // )
+
+// ========================================
+// modificando objeto com props
+// ======================================== 
+
+          function Header(props) {
+            return (
+              <header>
+                <h1> {props.name}'s kitchen </h1>
+              </header>
+            )
+          }
+          function Main(props) {
+            return (
+              <section>
+                <p> 
+                    We serve the most delicius food around 
+                    {props.year}
+                </p>
+              </section>
+            )
+          }
+          function App() {
+            return (
+              <div>
+                <Header name="Jorge" />
+                <Main year={new Date().getFullYear()} />
+              </div>
+            )
+          }
+          ReactDOM.render(
+              <App/>,
+              document.getElementById("root") 
+          )
+
+      </script>
+  </body>
+</html>

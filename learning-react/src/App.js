@@ -1,31 +1,36 @@
 import './App.css';
 import {useState} from "react";
-// whenever we see a state value being used with a form,
-// we think this as a controlled components
+// it is important to think about repeatable behavior to create a custom hook
+// custom hook is a function
+
+function useInput (initialValue) {
+  const [value, setValue] = useState(initialValue);
+  return [
+    {value, onChange: e => setValue(e.target.value)},
+    () => setValue(initialValue)
+  ]
+}
 
 function App() {
-    const [title, setTitle] = useState("");
-    const [color, setColor] = useState("#000000")
+    const [titleProps, resetTitle] = useInput("");
+    const [colorProps, resetColor] = useInput("#000000");
 
     const submit = (e) => {
          e.preventDefault();
-
-         alert(`${title}, ${color}`);
-         setTitle("");
-         setColor("");
+         alert(`${titleProps.value}, ${colorProps.value}`);
+         resetTitle();
+         resetColor();
     };
     return (
         <form onSubmit={submit} >
           <input 
-            value={title}
-            onChange={(event) => setTitle(event.target.value)}
-            // taget.value capture what is add to this field
+            {...titleProps}
+            // ... sintax to spread all of the properties
             type = "text"
             placeholder = "color"
           />
           <input 
-            value={color}
-            onChange={(event) => setColor(event.target.value)}
+            {...colorProps}
             type = "color"
           />
           <button> Add </button>
